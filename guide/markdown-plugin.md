@@ -15,7 +15,7 @@ npm install @wireweave/markdown-plugin
 In your Markdown files, use fenced code blocks with the `wire` language:
 
 ````markdown
-```wire
+```text
 page "Example" {
   card {
     heading "Hello World"
@@ -32,7 +32,7 @@ The plugin renders the wireframe inline in your documentation.
 Pass options after the language identifier:
 
 ````markdown
-```wire theme=dark width=800
+```text theme=dark width=800
 page "Dark Theme" {
   // content
 }
@@ -104,7 +104,7 @@ Options can be set per code block:
 Example:
 
 ````markdown
-```wire theme=dark width=400 padding=16
+```text theme=dark width=400 padding=16
 page { ... }
 ```
 ````
@@ -143,7 +143,7 @@ Renders as embedded HTML:
 ### Simple Card
 
 ````markdown
-```wire
+```text
 card {
   heading "Feature"
   text "Description of the feature"
@@ -155,7 +155,7 @@ card {
 ### Form Example
 
 ````markdown
-```wire width=400
+```text width=400
 card {
   heading "Sign Up"
   input "Email" email
@@ -169,7 +169,7 @@ card {
 ### Dashboard Layout
 
 ````markdown
-```wire theme=dark width=800
+```text theme=dark width=800
 page "Dashboard" {
   navbar { logo "App" nav { link "Home" link "Settings" } }
   row {

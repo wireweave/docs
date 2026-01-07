@@ -4,7 +4,7 @@ Every Wireweave wireframe starts with a `page` component - the root container fo
 
 ## Basic Page
 
-```wire
+```text
 page {
   // content goes here
 }
@@ -14,7 +14,7 @@ page {
 
 Give your page a title:
 
-```wire
+```text
 page "Login" {
   // content
 }
@@ -26,7 +26,7 @@ The title appears in the wireframe header and can be used for documentation.
 
 Set the color theme for the entire page:
 
-```wire
+```text
 page "Dashboard" theme:light {
   // light theme (default)
 }
@@ -40,7 +40,7 @@ page "Dashboard" theme:dark {
 
 ### Full Width
 
-```wire
+```text
 page fullWidth {
   // content spans full width
 }
@@ -48,7 +48,7 @@ page fullWidth {
 
 ### Centered Content
 
-```wire
+```text
 page center {
   // content is centered
 }
@@ -56,7 +56,7 @@ page center {
 
 ### Max Width
 
-```wire
+```text
 page maxWidth:1200 {
   // content limited to 1200px
 }
@@ -66,7 +66,7 @@ page maxWidth:1200 {
 
 ### Landing Page
 
-```wire
+```text
 page "Home" {
   navbar {
     logo "Brand"
@@ -96,7 +96,7 @@ page "Home" {
 
 ### Dashboard
 
-```wire
+```text
 page "Dashboard" {
   navbar {
     logo "App"
@@ -134,7 +134,7 @@ page "Dashboard" {
 
 ### Auth Pages
 
-```wire
+```text
 page "Login" center {
   card width:400 {
     heading "Welcome Back"
@@ -159,7 +159,7 @@ page "Login" center {
 
 ### Settings Page
 
-```wire
+```text
 page "Settings" {
   navbar { ... }
 
@@ -222,7 +222,7 @@ wireframes/
 
 Or use sections to show flow:
 
-```wire
+```text
 page "User Flow" {
   section "Step 1: Login" {
     card { ... }

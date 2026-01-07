@@ -6,7 +6,7 @@ Complete reference of all Wireweave components with examples.
 
 The root container for wireframes.
 
-```wire
+```text
 page "Title" theme:light {
   // content
 }
@@ -25,7 +25,7 @@ page "Title" theme:light {
 
 A contained surface for grouping content.
 
-```wire
+```text
 card "Title" outlined {
   heading "Card Title"
   text "Card content"
@@ -45,7 +45,7 @@ card "Title" outlined {
 
 Interactive button element.
 
-```wire
+```text
 button "Click Me" primary
 button "Cancel" secondary
 button "Delete" danger
@@ -72,7 +72,7 @@ button "Delete" danger
 
 Form input field.
 
-```wire
+```text
 input "Email" email
 input "Password" password
 input "Bio" textarea
@@ -104,7 +104,7 @@ input "Bio" textarea
 
 Text heading (h1-h6).
 
-```wire
+```text
 heading "Main Title"
 heading "Subtitle" level:2
 heading "Section" level:3
@@ -120,7 +120,7 @@ heading "Section" level:3
 
 Body text content.
 
-```wire
+```text
 text "Regular text"
 text "Muted text" muted
 text "Bold text" bold
@@ -139,7 +139,7 @@ text "Bold text" bold
 
 Image placeholder.
 
-```wire
+```text
 image "Product Photo"
 image "Avatar" size:48
 image "Banner" width:800 height:200
@@ -158,7 +158,7 @@ image "Banner" width:800 height:200
 
 Data table with rows and columns.
 
-```wire
+```text
 table {
   header {
     column "Name"
@@ -177,7 +177,7 @@ table {
 
 Ordered or unordered list.
 
-```wire
+```text
 list {
   item "First item"
   item "Second item"
@@ -199,7 +199,7 @@ list ordered {
 
 Top navigation bar.
 
-```wire
+```text
 navbar {
   logo "Brand"
   nav {
@@ -215,7 +215,7 @@ navbar {
 
 Side navigation panel.
 
-```wire
+```text
 sidebar width:240 {
   menu {
     item "Dashboard"
@@ -234,7 +234,7 @@ sidebar width:240 {
 
 Navigation menu.
 
-```wire
+```text
 menu {
   item "Dashboard"
   item "Settings" active
@@ -248,7 +248,7 @@ menu {
 
 Status message display.
 
-```wire
+```text
 alert "Success!" success
 alert "Error occurred" error
 alert "Warning" warning
@@ -268,7 +268,7 @@ alert "Information" info
 
 Status indicator.
 
-```wire
+```text
 badge "New"
 badge "Active" success
 badge "3" count
@@ -287,7 +287,7 @@ badge "3" count
 
 Progress indicator.
 
-```wire
+```text
 progress 75
 progress 50 label:"Loading..."
 ```
@@ -303,7 +303,7 @@ progress 50 label:"Loading..."
 
 Checkbox input.
 
-```wire
+```text
 checkbox "Remember me"
 checkbox "I agree" checked
 ```
@@ -319,7 +319,7 @@ checkbox "I agree" checked
 
 Radio button input.
 
-```wire
+```text
 radio "Option A"
 radio "Option B" selected
 ```
@@ -335,7 +335,7 @@ radio "Option B" selected
 
 Dropdown select.
 
-```wire
+```text
 select "Country" {
   option "USA"
   option "Canada"
@@ -349,7 +349,7 @@ select "Country" {
 
 Horizontal layout container.
 
-```wire
+```text
 row gap:16 justify:between {
   button "Cancel" secondary
   button "Submit" primary
@@ -368,7 +368,7 @@ row gap:16 justify:between {
 
 Vertical column in a row.
 
-```wire
+```text
 row {
   column width:8 { ... }
   column width:4 { ... }
@@ -385,7 +385,7 @@ row {
 
 Grid layout container.
 
-```wire
+```text
 grid columns:3 gap:24 {
   card { ... }
   card { ... }
@@ -404,7 +404,7 @@ grid columns:3 gap:24 {
 
 Vertical stack layout.
 
-```wire
+```text
 stack gap:16 {
   input "Email" email
   input "Password" password
@@ -422,7 +422,7 @@ stack gap:16 {
 
 Horizontal divider line.
 
-```wire
+```text
 divider
 divider "or"
 ```
@@ -437,7 +437,7 @@ divider "or"
 
 Modal dialog overlay.
 
-```wire
+```text
 modal "Confirm Delete" {
   text "Are you sure you want to delete this item?"
   row justify:end gap:8 {
@@ -453,7 +453,7 @@ modal "Confirm Delete" {
 
 User avatar display.
 
-```wire
+```text
 avatar "John Doe"
 avatar "JD" size:48
 ```

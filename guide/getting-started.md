@@ -44,7 +44,7 @@ To use Wireweave with Claude or other AI assistants:
 
 Let's create a simple contact form:
 
-```wire
+```text
 page "Contact" {
   navbar {
     logo "Company"
@@ -81,7 +81,7 @@ page "Contact" {
 
 Every wireframe starts with a `page`:
 
-```wire
+```text
 page "Page Title" {
   // content goes here
 }
@@ -91,7 +91,7 @@ page "Page Title" {
 
 Components are nested inside pages:
 
-```wire
+```text
 page {
   card {
     heading "Title"
@@ -105,7 +105,7 @@ page {
 
 Add modifiers to customize components:
 
-```wire
+```text
 button "Click Me" primary    // primary style
 button "Cancel" secondary    // secondary style
 card center                  // centered layout

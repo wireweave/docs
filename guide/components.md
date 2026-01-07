@@ -8,7 +8,7 @@ Wireweave provides a rich set of semantic UI components for building wireframes.
 
 The root element of every wireframe:
 
-```wire
+```text
 page "Dashboard" {
   // content
 }
@@ -18,7 +18,7 @@ page "Dashboard" {
 
 A grouped content container:
 
-```wire
+```text
 card {
   heading "Card Title"
   text "Card content"
@@ -37,7 +37,7 @@ card outlined {
 
 Semantic content sections:
 
-```wire
+```text
 section {
   heading "Section Title"
   // content
@@ -50,7 +50,7 @@ section {
 
 Top navigation bar:
 
-```wire
+```text
 navbar {
   logo "Brand"
   nav {
@@ -65,7 +65,7 @@ navbar {
 
 Side navigation:
 
-```wire
+```text
 sidebar {
   menu {
     item "Dashboard"
@@ -79,7 +79,7 @@ sidebar {
 
 Page footer:
 
-```wire
+```text
 footer {
   text "Copyright 2024"
   links {
@@ -95,7 +95,7 @@ footer {
 
 Various input types:
 
-```wire
+```text
 input "Username" text
 input "Email" email
 input "Password" password
@@ -108,7 +108,7 @@ input "Birthday" date
 
 Action buttons:
 
-```wire
+```text
 button "Submit" primary
 button "Cancel" secondary
 button "Delete" danger
@@ -119,7 +119,7 @@ button "Learn More" link
 
 Selection controls:
 
-```wire
+```text
 checkbox "Remember me"
 checkbox "Agree to terms" checked
 
@@ -131,7 +131,7 @@ radio "Option B" selected
 
 Dropdown selection:
 
-```wire
+```text
 select "Country" {
   option "USA"
   option "Canada"
@@ -145,7 +145,7 @@ select "Country" {
 
 Text headings:
 
-```wire
+```text
 heading "Main Title"
 heading "Subtitle" level:2
 heading "Section" level:3
@@ -155,7 +155,7 @@ heading "Section" level:3
 
 Body text:
 
-```wire
+```text
 text "Regular paragraph text"
 text "Muted description" muted
 text "Important note" bold
@@ -165,7 +165,7 @@ text "Important note" bold
 
 Image placeholders:
 
-```wire
+```text
 image "Product Photo"
 image "Avatar" size:48
 image "Banner" width:800 height:200
@@ -175,7 +175,7 @@ image "Banner" width:800 height:200
 
 Data tables:
 
-```wire
+```text
 table {
   header {
     column "Name"
@@ -199,7 +199,7 @@ table {
 
 Ordered and unordered lists:
 
-```wire
+```text
 list {
   item "First item"
   item "Second item"
@@ -219,7 +219,7 @@ list ordered {
 
 Status messages:
 
-```wire
+```text
 alert "Operation successful" success
 alert "Please check your input" warning
 alert "An error occurred" error
@@ -230,7 +230,7 @@ alert "New update available" info
 
 Status indicators:
 
-```wire
+```text
 badge "New"
 badge "Pending" warning
 badge "Active" success
@@ -241,7 +241,7 @@ badge "3" count
 
 Progress indicators:
 
-```wire
+```text
 progress 75
 progress 50 label:"Uploading..."
 ```
@@ -250,7 +250,7 @@ progress 50 label:"Uploading..."
 
 Components support layout modifiers:
 
-```wire
+```text
 card center {
   // horizontally centered
 }

@@ -15,7 +15,7 @@ Traditional wireframing tools require manual drag-and-drop operations, which AI 
 
 Here's a simple login page wireframe:
 
-```wire
+```text
 page "Login" {
   card center {
     heading "Welcome Back"

@@ -6,7 +6,7 @@ Wireweave provides built-in themes and styling options for customizing wireframe
 
 ### Light Theme (Default)
 
-```wire
+```text
 page "Light Mode" theme:light {
   // content
 }
@@ -20,7 +20,7 @@ Light theme uses:
 
 ### Dark Theme
 
-```wire
+```text
 page "Dark Mode" theme:dark {
   // content
 }
@@ -36,7 +36,7 @@ Dark theme uses:
 
 ### Button Colors
 
-```wire
+```text
 button "Primary" primary      // Blue
 button "Secondary" secondary  // Gray
 button "Success" success      // Green
@@ -46,7 +46,7 @@ button "Warning" warning      // Yellow
 
 ### Alert Colors
 
-```wire
+```text
 alert "Success!" success      // Green background
 alert "Error!" error          // Red background
 alert "Warning!" warning      // Yellow background
@@ -55,7 +55,7 @@ alert "Info!" info            // Blue background
 
 ### Badge Colors
 
-```wire
+```text
 badge "Active" success
 badge "Pending" warning
 badge "Inactive" error
@@ -66,7 +66,7 @@ badge "New" info
 
 ### Heading Sizes
 
-```wire
+```text
 heading "H1 Title"            // 32px
 heading "H2 Title" level:2    // 24px
 heading "H3 Title" level:3    // 20px
@@ -75,7 +75,7 @@ heading "H4 Title" level:4    // 16px
 
 ### Text Styles
 
-```wire
+```text
 text "Regular text"
 text "Bold text" bold
 text "Muted text" muted
@@ -87,7 +87,7 @@ text "Large text" large
 
 ### Card Styles
 
-```wire
+```text
 card {
   // default with subtle shadow
 }
@@ -107,7 +107,7 @@ card elevated {
 
 ### Input Styles
 
-```wire
+```text
 input "Default" text
 input "Error" text error
 input "Disabled" text disabled
@@ -116,7 +116,7 @@ input "Readonly" text readonly
 
 ### Button Styles
 
-```wire
+```text
 button "Solid" primary
 button "Outline" primary outline
 button "Ghost" primary ghost
@@ -127,7 +127,7 @@ button "Link" link
 
 ### Component Sizes
 
-```wire
+```text
 button "Small" primary size:sm
 button "Medium" primary size:md
 button "Large" primary size:lg
@@ -138,7 +138,7 @@ input "Large" text size:lg
 
 ### Width Options
 
-```wire
+```text
 input "Full Width" text fullWidth
 button "Full Width" primary fullWidth
 

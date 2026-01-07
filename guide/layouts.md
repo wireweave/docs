@@ -6,7 +6,7 @@ Wireweave provides flexible layout options for organizing your wireframe content
 
 ### Basic Layout
 
-```wire
+```text
 page "Basic" {
   navbar { ... }
   main { ... }
@@ -16,7 +16,7 @@ page "Basic" {
 
 ### Sidebar Layout
 
-```wire
+```text
 page "Dashboard" {
   navbar { ... }
   row {
@@ -29,7 +29,7 @@ page "Dashboard" {
 
 ### Two Column Layout
 
-```wire
+```text
 page "Blog" {
   main {
     row {
@@ -46,7 +46,7 @@ page "Blog" {
 
 Horizontal arrangement:
 
-```wire
+```text
 row {
   card { ... }
   card { ... }
@@ -58,7 +58,7 @@ row {
 
 Vertical sections with width:
 
-```wire
+```text
 row {
   column width:6 {
     // half width
@@ -73,7 +73,7 @@ row {
 
 Grid-based layout:
 
-```wire
+```text
 grid columns:3 gap:16 {
   card { ... }
   card { ... }
@@ -88,7 +88,7 @@ grid columns:3 gap:16 {
 
 Vertical stacking:
 
-```wire
+```text
 stack gap:8 {
   input "Email" email
   input "Password" password
@@ -100,7 +100,7 @@ stack gap:8 {
 
 ### Horizontal Alignment
 
-```wire
+```text
 card left {
   // left aligned (default)
 }
@@ -116,7 +116,7 @@ card right {
 
 ### Vertical Alignment
 
-```wire
+```text
 row align:top {
   // top aligned
 }
@@ -132,7 +132,7 @@ row align:bottom {
 
 ### Distribution
 
-```wire
+```text
 row justify:between {
   // space between items
 }
@@ -150,7 +150,7 @@ row justify:evenly {
 
 ### Padding
 
-```wire
+```text
 card padding:16 {
   // 16px padding
 }
@@ -162,7 +162,7 @@ card padding:24 {
 
 ### Gap
 
-```wire
+```text
 row gap:8 {
   // 8px gap between items
 }
@@ -174,7 +174,7 @@ stack gap:16 {
 
 ### Margin
 
-```wire
+```text
 section margin:32 {
   // 32px margin
 }
@@ -184,7 +184,7 @@ section margin:32 {
 
 Wireweave supports responsive hints:
 
-```wire
+```text
 grid columns:3 columns-sm:1 {
   // 3 columns on desktop, 1 on mobile
 }
@@ -198,7 +198,7 @@ row wrap {
 
 ### Card Grid
 
-```wire
+```text
 grid columns:3 gap:24 {
   card {
     image "Product 1"
@@ -212,7 +212,7 @@ grid columns:3 gap:24 {
 
 ### Form Layout
 
-```wire
+```text
 card {
   stack gap:16 {
     heading "Contact Form"
@@ -229,7 +229,7 @@ card {
 
 ### Dashboard Layout
 
-```wire
+```text
 page "Dashboard" {
   navbar {
     logo "App"

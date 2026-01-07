@@ -6,7 +6,7 @@ Complete syntax reference for Wireweave DSL.
 
 ### Comments
 
-```wire
+```text
 // Single line comment
 
 /* Multi-line
@@ -15,21 +15,21 @@ Complete syntax reference for Wireweave DSL.
 
 ### Strings
 
-```wire
+```text
 "Double quoted string"
 'Single quoted string'
 ```
 
 ### Numbers
 
-```wire
+```text
 100        // Integer
 3.14       // Float
 ```
 
 ### Booleans
 
-```wire
+```text
 true
 false
 ```
@@ -45,7 +45,7 @@ page [title] [modifiers] {
 ```
 
 Examples:
-```wire
+```text
 page { }
 page "Title" { }
 page "Title" theme:dark { }
@@ -60,7 +60,7 @@ component_name [label] [modifiers] {
 ```
 
 Examples:
-```wire
+```text
 card { }
 card "Title" { }
 card center outlined { }
@@ -71,7 +71,7 @@ button "Click" primary
 
 ### Style Modifiers
 
-```wire
+```text
 primary     // Primary color
 secondary   // Secondary color
 success     // Success/green
@@ -85,7 +85,7 @@ link        // Link style
 
 ### Size Modifiers
 
-```wire
+```text
 size:sm     // Small
 size:md     // Medium (default)
 size:lg     // Large
@@ -97,7 +97,7 @@ fullWidth   // Full width
 
 ### Layout Modifiers
 
-```wire
+```text
 center      // Centered
 left        // Left aligned
 right       // Right aligned
@@ -113,7 +113,7 @@ margin:16   // External margin
 
 ### State Modifiers
 
-```wire
+```text
 active      // Active state
 disabled    // Disabled state
 checked     // Checked (checkbox/radio)
@@ -232,13 +232,13 @@ tooltip [content]
 
 ### Key-Value Attributes
 
-```wire
+```text
 component attribute:value
 component attribute:"string value"
 ```
 
 Examples:
-```wire
+```text
 grid columns:3
 input placeholder:"Enter email"
 progress value:75
@@ -246,19 +246,19 @@ progress value:75
 
 ### Boolean Attributes
 
-```wire
+```text
 component attribute   // Sets to true
 ```
 
 Examples:
-```wire
+```text
 button primary        // primary=true
 input disabled        // disabled=true
 ```
 
 ## Full Example
 
-```wire
+```text
 page "User Management" theme:light {
   navbar {
     logo "Admin"
