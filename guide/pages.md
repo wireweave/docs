@@ -89,7 +89,7 @@ page "Home" {
   }
 
   footer {
-    text "Copyright 2024"
+    text "Copyright 2026"
   }
 }
 ```

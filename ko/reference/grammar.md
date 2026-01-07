@@ -1,40 +1,40 @@
-# Grammar Reference
+# 문법 레퍼런스
 
-Complete syntax reference for Wireweave DSL.
+Wireweave DSL의 완전한 문법 레퍼런스입니다.
 
-## Basic Syntax
+## 기본 문법
 
-### Comments
-
-```wireframe
-// Single line comment
-
-/* Multi-line
-   comment */
-```
-
-### Strings
+### 주석
 
 ```wireframe
-"Double quoted string"
-'Single quoted string'
+// 한 줄 주석
+
+/* 여러 줄
+   주석 */
 ```
 
-### Numbers
+### 문자열
 
 ```wireframe
-100        // Integer
-3.14       // Float
+"쌍따옴표 문자열"
+'홑따옴표 문자열'
 ```
 
-### Booleans
+### 숫자
+
+```wireframe
+100        // 정수
+3.14       // 실수
+```
+
+### 불리언
 
 ```wireframe
 true
 false
 ```
 
-## Structure
+## 구조
 
 ### Page
 
@@ -44,14 +44,14 @@ page [title] [modifiers] {
 }
 ```
 
-Examples:
+예제:
 ```wireframe
 page { }
 page "Title" { }
 page "Title" centered { }
 ```
 
-### Components
+### 컴포넌트
 
 ```wireframe
 component_name [label] [modifiers] {
@@ -59,7 +59,7 @@ component_name [label] [modifiers] {
 }
 ```
 
-Examples:
+예제:
 ```wireframe
 card { }
 card "Title" { }
@@ -67,14 +67,14 @@ card shadow=md border { }
 button "Click" primary
 ```
 
-## Components Reference
+## 컴포넌트 레퍼런스
 
-### Layout (레이아웃)
+### Layout
 
 페이지 구조를 정의하는 컴포넌트입니다.
 
-| Component | Description | Attributes |
-|-----------|-------------|------------|
+| 컴포넌트 | 설명 | 속성 |
+|----------|------|------|
 | `page` | 페이지 루트 컨테이너 | title, viewport, device, centered, p, gap |
 | `header` | 페이지 헤더 영역 | p, border, gap, justify, align |
 | `main` | 메인 콘텐츠 영역 | p, gap |
@@ -90,14 +90,14 @@ page "Dashboard" {
 }
 ```
 
-### Grid (그리드)
+### Grid
 
 플렉스 레이아웃을 위한 컴포넌트입니다.
 
-| Component | Description | Attributes |
-|-----------|-------------|------------|
-| `row` | 가로 방향 플렉스 컨테이너 | gap, justify, align, wrap, p, m |
-| `col` | 세로 방향 컨테이너/그리드 컬럼 | span, sm, md, lg, xl, order, gap, p, w |
+| 컴포넌트 | 설명 | 속성 |
+|----------|------|------|
+| `row` | 가로 플렉스 컨테이너 | gap, justify, align, wrap, p, m |
+| `col` | 세로 컨테이너/그리드 컬럼 | span, sm, md, lg, xl, order, gap, p, w |
 
 ```wireframe
 row gap=4 justify=between {
@@ -106,12 +106,12 @@ row gap=4 justify=between {
 }
 ```
 
-### Container (컨테이너)
+### Container
 
 콘텐츠를 그룹화하는 컴포넌트입니다.
 
-| Component | Description | Attributes |
-|-----------|-------------|------------|
+| 컴포넌트 | 설명 | 속성 |
+|----------|------|------|
 | `card` | 카드 컴포넌트 | title, p, shadow, border, gap |
 | `modal` | 모달 다이얼로그 | title, w, h, p |
 | `drawer` | 드로어 패널 | title, position, p |
@@ -119,7 +119,7 @@ row gap=4 justify=between {
 
 ```wireframe
 card title="Settings" shadow=md {
-  // content
+  // 콘텐츠
 }
 
 modal "Confirm" {
@@ -128,12 +128,12 @@ modal "Confirm" {
 }
 ```
 
-### Text (텍스트)
+### Text
 
-텍스트 표시를 위한 컴포넌트입니다.
+텍스트를 표시하는 컴포넌트입니다.
 
-| Component | Description | Attributes |
-|-----------|-------------|------------|
+| 컴포넌트 | 설명 | 속성 |
+|----------|------|------|
 | `text` | 일반 텍스트 | size, weight, align, muted, m |
 | `title` | 제목 (h1~h6) | level, size, align, m |
 | `link` | 하이퍼링크 | href, external |
@@ -144,12 +144,12 @@ text "Description" muted
 link "Learn more" href="/docs"
 ```
 
-### Input (입력/버튼)
+### Input
 
 사용자 입력을 받는 컴포넌트입니다.
 
-| Component | Description | Attributes |
-|-----------|-------------|------------|
+| 컴포넌트 | 설명 | 속성 |
+|----------|------|------|
 | `input` | 입력 필드 | label, type, placeholder, value, disabled, required, icon |
 | `textarea` | 여러 줄 입력 | label, placeholder, value, rows, disabled |
 | `select` | 드롭다운 선택 | label, placeholder, value, disabled |
@@ -159,7 +159,7 @@ link "Learn more" href="/docs"
 | `slider` | 슬라이더 | label, min, max, value, step, disabled |
 | `button` | 버튼 | primary, secondary, outline, ghost, danger, size, icon, disabled, loading |
 
-Input types: `text`, `email`, `password`, `number`, `tel`, `url`, `search`, `date`
+입력 타입: `text`, `email`, `password`, `number`, `tel`, `url`, `search`, `date`
 
 ```wireframe
 input "Email" type=email placeholder="Enter email"
@@ -170,16 +170,16 @@ button "Submit" primary
 button "Cancel" outline
 ```
 
-### Display (표시)
+### Display
 
 시각적 요소를 표시하는 컴포넌트입니다.
 
-| Component | Description | Attributes |
-|-----------|-------------|------------|
+| 컴포넌트 | 설명 | 속성 |
+|----------|------|------|
 | `image` | 이미지 | src, alt, w, h |
 | `placeholder` | 플레이스홀더 | label, w, h |
 | `avatar` | 아바타 | name, src, size |
-| `badge` | 배지 | variant, pill, icon, size |
+| `badge` | 뱃지 | variant, pill, icon, size |
 | `icon` | 아이콘 | name, size, muted |
 | `divider` | 구분선 | m, my, mx |
 
@@ -191,37 +191,37 @@ icon "home" size=md
 divider my=4
 ```
 
-### Data (데이터)
+### Data
 
-데이터 표시를 위한 컴포넌트입니다.
+데이터를 표시하는 컴포넌트입니다.
 
-| Component | Description | Attributes |
-|-----------|-------------|------------|
+| 컴포넌트 | 설명 | 속성 |
+|----------|------|------|
 | `table` | 테이블 | striped, bordered, hover |
 | `list` | 리스트 | ordered, none, gap |
 
 ```wireframe
 table striped hover {
-  // columns and rows defined in content
+  // 컬럼과 행 정의
 }
 
 list ordered {
-  // items
+  // 항목
 }
 ```
 
-### Feedback (피드백)
+### Feedback
 
 사용자에게 피드백을 제공하는 컴포넌트입니다.
 
-| Component | Description | Attributes |
-|-----------|-------------|------------|
+| 컴포넌트 | 설명 | 속성 |
+|----------|------|------|
 | `alert` | 알림 메시지 | variant, dismissible, icon |
 | `toast` | 토스트 알림 | position, variant |
 | `progress` | 프로그레스 바 | value, max, label, indeterminate |
 | `spinner` | 로딩 스피너 | label, size |
 
-Variants: `success`, `warning`, `danger`, `info`
+Variant: `success`, `warning`, `danger`, `info`
 
 ```wireframe
 alert "Success!" variant=success
@@ -229,12 +229,12 @@ progress value=75 label="Loading..."
 spinner size=lg
 ```
 
-### Overlay (오버레이)
+### Overlay
 
 오버레이 UI 컴포넌트입니다.
 
-| Component | Description | Attributes |
-|-----------|-------------|------------|
+| 컴포넌트 | 설명 | 속성 |
+|----------|------|------|
 | `tooltip` | 툴팁 | position |
 | `popover` | 팝오버 | title |
 | `dropdown` | 드롭다운 메뉴 | - |
@@ -245,69 +245,69 @@ tooltip "Help text" position=top {
 }
 
 dropdown {
-  // items
+  // 항목
 }
 ```
 
-### Navigation (네비게이션)
+### Navigation
 
 네비게이션 컴포넌트입니다.
 
-| Component | Description | Attributes |
-|-----------|-------------|------------|
+| 컴포넌트 | 설명 | 속성 |
+|----------|------|------|
 | `nav` | 네비게이션 메뉴 | vertical, gap |
 | `tabs` | 탭 컴포넌트 | active |
 | `breadcrumb` | 브레드크럼 | - |
 
 ```wireframe
 nav vertical {
-  // nav items
+  // 네비게이션 항목
 }
 
 tabs active=0 {
-  // tab panels
+  // 탭 패널
 }
 
 breadcrumb {
-  // breadcrumb items
+  // 브레드크럼 항목
 }
 ```
 
-## Attribute Syntax
+## 속성 문법
 
-### Key-Value Attributes
+### 키-값 속성
 
 ```wireframe
 component attribute=value
 component attribute="string value"
 ```
 
-Examples:
+예제:
 ```wireframe
 col span=6
 input placeholder="Enter email"
 progress value=75
 ```
 
-### Boolean Attributes
+### 불리언 속성
 
 ```wireframe
-component attribute   // Sets to true
+component attribute   // true로 설정
 ```
 
-Examples:
+예제:
 ```wireframe
 button primary        // primary=true
 input disabled        // disabled=true
 checkbox checked      // checked=true
 ```
 
-## Spacing System
+## 간격 시스템
 
-Wireweave uses a spacing token system:
+Wireweave는 간격 토큰 시스템을 사용합니다:
 
-| Token | Value |
-|-------|-------|
+| 토큰 | 값 |
+|------|-----|
 | 0 | 0px |
 | 1 | 4px |
 | 2 | 8px |
@@ -325,7 +325,7 @@ row gap=2         // gap: 8px
 text mt=6         // margin-top: 24px
 ```
 
-## Full Example
+## 전체 예제
 
 ```wireframe
 page "User Management" centered {
@@ -333,7 +333,7 @@ page "User Management" centered {
     row justify=between align=center {
       title "Admin" level=3
       nav {
-        // nav items
+        // 네비게이션 항목
       }
       avatar "Admin"
     }
@@ -342,7 +342,7 @@ page "User Management" centered {
   row {
     sidebar w=200 {
       nav vertical {
-        // menu items
+        // 메뉴 항목
       }
     }
 
@@ -354,7 +354,7 @@ page "User Management" centered {
 
       card {
         table striped hover {
-          // table content
+          // 테이블 콘텐츠
         }
       }
 

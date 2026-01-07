@@ -84,6 +84,61 @@ export default defineConfig({
         },
       },
     },
+    ja: {
+      label: '日本語',
+      lang: 'ja',
+      link: '/ja/',
+      themeConfig: {
+        nav: [
+          { text: 'ガイド', link: '/ja/guide/getting-started' },
+          { text: 'リファレンス', link: '/ja/reference/grammar' },
+          { text: 'Playground', link: 'https://playground.wireweave.dev' },
+          { text: 'Dashboard', link: 'https://dashboard.wireweave.dev' },
+        ],
+        sidebar: {
+          '/ja/guide/': [
+            {
+              text: 'はじめに',
+              items: [
+                { text: 'Wireweaveとは？', link: '/ja/guide/what-is-wireweave' },
+                { text: 'はじめる', link: '/ja/guide/getting-started' },
+              ],
+            },
+            {
+              text: 'コアコンセプト',
+              items: [
+                { text: 'ページ', link: '/ja/guide/pages' },
+                { text: 'コンポーネント', link: '/ja/guide/components' },
+                { text: 'レイアウト', link: '/ja/guide/layouts' },
+                { text: 'スタイリング', link: '/ja/guide/styling' },
+              ],
+            },
+            {
+              text: '連携',
+              items: [
+                { text: 'MCPサーバー', link: '/ja/guide/mcp-server' },
+                { text: 'VS Code拡張', link: '/ja/guide/vscode-extension' },
+                { text: 'Markdownプラグイン', link: '/ja/guide/markdown-plugin' },
+              ],
+            },
+          ],
+          '/ja/reference/': [
+            {
+              text: 'リファレンス',
+              items: [
+                { text: '文法', link: '/ja/reference/grammar' },
+                { text: 'コンポーネント', link: '/ja/reference/components' },
+                { text: 'API', link: '/ja/reference/api' },
+              ],
+            },
+          ],
+        },
+        outline: {
+          level: [2, 3],
+          label: '目次',
+        },
+      },
+    },
   },
 
   themeConfig: {
@@ -145,7 +200,7 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright 2024 Wireweave',
+      copyright: 'Copyright 2026 Wireweave',
     },
 
     search: {

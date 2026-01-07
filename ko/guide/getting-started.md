@@ -70,7 +70,7 @@ page "Contact" {
   }
 
   footer {
-    text "2024 Company Inc."
+    text "2026 Company Inc."
   }
 }
 ```

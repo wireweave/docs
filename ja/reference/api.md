@@ -1,45 +1,45 @@
-# API 레퍼런스
+# APIリファレンス
 
-Wireweave API 서버의 완전한 API 문서입니다.
+Wireweave APIサーバーの完全なAPIドキュメントです。
 
-## 기본 URL
+## ベースURL
 
 ```
 https://api.wireweave.dev
 ```
 
-## 인증
+## 認証
 
-모든 `/tools/*` 엔드포인트는 인증이 필요합니다. API 키를 다음 방법으로 제공합니다:
+すべての`/tools/*`エンドポイントは認証が必要です。APIキーを以下の方法で提供します：
 
-### 헤더 (권장)
+### ヘッダー（推奨）
 
 ```bash
 curl -H "x-api-key: your-api-key" https://api.wireweave.dev/tools/parse
 ```
 
-### Authorization 헤더
+### Authorizationヘッダー
 
 ```bash
 curl -H "Authorization: Bearer your-api-key" https://api.wireweave.dev/tools/parse
 ```
 
-### 쿼리 파라미터
+### クエリパラメータ
 
 ```bash
 curl "https://api.wireweave.dev/tools/parse?api_key=your-api-key"
 ```
 
-## 요청 제한
+## レート制限
 
-| 등급 | 분당 | 일일 | 월간 할당량 |
-|------|------|------|-------------|
+| ティア | 分あたり | 日あたり | 月間クォータ |
+|--------|----------|----------|--------------|
 | Free | 10 | 100 | 1,000 |
 | Basic | 30 | 500 | 10,000 |
 | Pro | 60 | 2,000 | 50,000 |
-| Enterprise | 120 | 10,000 | 무제한 |
+| Enterprise | 120 | 10,000 | 無制限 |
 
-### 요청 제한 헤더
+### レート制限ヘッダー
 
 ```
 X-RateLimit-Limit: 60
@@ -47,15 +47,15 @@ X-RateLimit-Remaining: 59
 X-RateLimit-Reset: 1699999999
 ```
 
-## 엔드포인트
+## エンドポイント
 
 ---
 
 ### GET /health
 
-헬스 체크 엔드포인트 (인증 불필요).
+ヘルスチェックエンドポイント（認証不要）。
 
-**응답:**
+**レスポンス：**
 
 ```json
 {
@@ -68,9 +68,9 @@ X-RateLimit-Reset: 1699999999
 
 ### POST /tools/parse
 
-Wireweave DSL 소스 코드를 AST로 파싱합니다.
+Wireweave DSLソースコードをASTにパースします。
 
-**요청:**
+**リクエスト：**
 
 ```bash
 curl -X POST https://api.wireweave.dev/tools/parse \
@@ -79,13 +79,13 @@ curl -X POST https://api.wireweave.dev/tools/parse \
   -d '{"source": "page { button \"Click\" primary }"}'
 ```
 
-**요청 본문:**
+**リクエストボディ：**
 
-| 필드 | 타입 | 필수 | 설명 |
-|------|------|------|------|
-| source | string | 예 | Wireweave DSL 소스 코드 |
+| フィールド | タイプ | 必須 | 説明 |
+|------------|--------|------|------|
+| source | string | はい | Wireweave DSLソースコード |
 
-**응답:**
+**レスポンス：**
 
 ```json
 {
@@ -111,9 +111,9 @@ curl -X POST https://api.wireweave.dev/tools/parse \
 
 ### POST /tools/validate
 
-Wireweave DSL 문법을 검증합니다.
+Wireweave DSL構文を検証します。
 
-**요청:**
+**リクエスト：**
 
 ```bash
 curl -X POST https://api.wireweave.dev/tools/validate \
@@ -122,13 +122,13 @@ curl -X POST https://api.wireweave.dev/tools/validate \
   -d '{"source": "page { button \"Click\" }"}'
 ```
 
-**요청 본문:**
+**リクエストボディ：**
 
-| 필드 | 타입 | 필수 | 설명 |
-|------|------|------|------|
-| source | string | 예 | Wireweave DSL 소스 코드 |
+| フィールド | タイプ | 必須 | 説明 |
+|------------|--------|------|------|
+| source | string | はい | Wireweave DSLソースコード |
 
-**성공 응답:**
+**成功レスポンス：**
 
 ```json
 {
@@ -136,7 +136,7 @@ curl -X POST https://api.wireweave.dev/tools/validate \
 }
 ```
 
-**오류 응답:**
+**エラーレスポンス：**
 
 ```json
 {
@@ -155,9 +155,9 @@ curl -X POST https://api.wireweave.dev/tools/validate \
 
 ### POST /tools/render/html
 
-Wireweave DSL을 HTML로 렌더링합니다.
+Wireweave DSLをHTMLにレンダリングします。
 
-**요청:**
+**リクエスト：**
 
 ```bash
 curl -X POST https://api.wireweave.dev/tools/render/html \
@@ -170,15 +170,15 @@ curl -X POST https://api.wireweave.dev/tools/render/html \
   }'
 ```
 
-**요청 본문:**
+**リクエストボディ：**
 
-| 필드 | 타입 | 필수 | 기본값 | 설명 |
-|------|------|------|--------|------|
-| source | string | 예 | - | Wireweave DSL 소스 |
-| theme | string | 아니오 | "light" | "light" 또는 "dark" |
-| fullDocument | boolean | 아니오 | false | 완전한 HTML 문서 반환 |
+| フィールド | タイプ | 必須 | デフォルト | 説明 |
+|------------|--------|------|------------|------|
+| source | string | はい | - | Wireweave DSLソース |
+| theme | string | いいえ | "light" | "light"または"dark" |
+| fullDocument | boolean | いいえ | false | 完全なHTMLドキュメントを返す |
 
-**응답:**
+**レスポンス：**
 
 ```json
 {
@@ -187,7 +187,7 @@ curl -X POST https://api.wireweave.dev/tools/render/html \
 }
 ```
 
-`fullDocument: true` 인 경우:
+`fullDocument: true`の場合：
 
 ```json
 {
@@ -199,9 +199,9 @@ curl -X POST https://api.wireweave.dev/tools/render/html \
 
 ### POST /tools/render/svg
 
-Wireweave DSL을 SVG로 렌더링합니다.
+Wireweave DSLをSVGにレンダリングします。
 
-**요청:**
+**リクエスト：**
 
 ```bash
 curl -X POST https://api.wireweave.dev/tools/render/svg \
@@ -215,16 +215,16 @@ curl -X POST https://api.wireweave.dev/tools/render/svg \
   }'
 ```
 
-**요청 본문:**
+**リクエストボディ：**
 
-| 필드 | 타입 | 필수 | 기본값 | 설명 |
-|------|------|------|--------|------|
-| source | string | 예 | - | Wireweave DSL 소스 |
-| width | number | 아니오 | 1200 | SVG 너비 (픽셀) |
-| padding | number | 아니오 | 24 | 콘텐츠 주위 패딩 |
-| theme | string | 아니오 | "light" | "light" 또는 "dark" |
+| フィールド | タイプ | 必須 | デフォルト | 説明 |
+|------------|--------|------|------------|------|
+| source | string | はい | - | Wireweave DSLソース |
+| width | number | いいえ | 1200 | SVG幅（ピクセル） |
+| padding | number | いいえ | 24 | コンテンツ周りのパディング |
+| theme | string | いいえ | "light" | "light"または"dark" |
 
-**응답:**
+**レスポンス：**
 
 ```json
 {
@@ -238,16 +238,16 @@ curl -X POST https://api.wireweave.dev/tools/render/svg \
 
 ### GET /tools/grammar
 
-DSL 문법 문서를 가져옵니다.
+DSL文法ドキュメントを取得します。
 
-**요청:**
+**リクエスト：**
 
 ```bash
 curl https://api.wireweave.dev/tools/grammar \
   -H "x-api-key: your-api-key"
 ```
 
-**응답:**
+**レスポンス：**
 
 ```json
 {
@@ -258,7 +258,7 @@ curl https://api.wireweave.dev/tools/grammar \
 }
 ```
 
-## 오류 응답
+## エラーレスポンス
 
 ### 400 Bad Request
 
@@ -336,15 +336,15 @@ result = client.render_html(
 print(result.html)
 ```
 
-## 웹훅
+## Webhook
 
-Dashboard에서 웹훅을 설정하여 알림을 받을 수 있습니다:
+Dashboardでwebhookを設定して通知を受け取ることができます：
 
-- `usage.quota_warning` - 할당량 80% 사용
-- `usage.quota_exceeded` - 할당량 초과
-- `api_key.rotated` - API 키 갱신됨
+- `usage.quota_warning` - クォータ80%使用
+- `usage.quota_exceeded` - クォータ超過
+- `api_key.rotated` - APIキー更新
 
-## 다음 단계
+## 次のステップ
 
-- [MCP 서버 가이드](/ko/guide/mcp-server) - AI 통합
-- [Dashboard](https://dashboard.wireweave.dev) - API 키 관리
+- [MCPサーバーガイド](/ja/guide/mcp-server) - AI統合
+- [Dashboard](https://dashboard.wireweave.dev) - APIキー管理

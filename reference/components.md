@@ -68,7 +68,7 @@ Page footer area.
 
 ```wireframe
 footer border {
-  text "Copyright 2024" muted
+  text "Copyright 2026" muted
 }
 ```
 
