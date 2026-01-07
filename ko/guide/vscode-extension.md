@@ -1,133 +1,121 @@
-# VS Code Extension
+# VS Code 확장
 
-The Wireweave VS Code extension provides syntax highlighting, live preview, and code snippets for `.wire` files.
+Wireweave VS Code 확장은 구문 강조, 미리보기 및 코드 자동 완성 기능을 제공합니다.
 
-## Installation
+## 설치
 
-### From VS Code Marketplace
+### VS Code Marketplace
 
-1. Open VS Code
-2. Go to Extensions (Cmd+Shift+X / Ctrl+Shift+X)
-3. Search for "Wireweave"
-4. Click Install
+1. VS Code에서 Extensions 뷰 열기 (`Cmd+Shift+X` / `Ctrl+Shift+X`)
+2. "Wireweave" 검색
+3. Install 클릭
 
-### Manual Installation
+### 수동 설치
 
 ```bash
-code --install-extension wireweave.vscode
+code --install-extension wireweave.wireweave-vscode
 ```
 
-## Features
+## 기능
 
-### Syntax Highlighting
+### 구문 강조
 
-The extension provides full syntax highlighting for Wireweave DSL:
+`.wire` 및 `.wireframe` 파일에 대해 구문 강조가 자동으로 적용됩니다:
 
-- Keywords (page, card, button, etc.)
-- Strings and values
-- Modifiers and attributes
-- Comments
+- 컴포넌트 키워드
+- 문자열과 숫자
+- 수정자와 속성
+- 주석
 
-### Live Preview
+### 실시간 미리보기
 
-View your wireframe as you type:
+코드를 작성하면서 실시간으로 와이어프레임을 미리볼 수 있습니다:
 
-1. Open a `.wire` file
-2. Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows)
-3. Run "Wireweave: Open Preview"
+1. `.wire` 파일 열기
+2. 명령 팔레트 열기 (`Cmd+Shift+P` / `Ctrl+Shift+P`)
+3. "Wireweave: Open Preview" 선택
 
-The preview updates automatically as you edit.
+또는 에디터 우측 상단의 미리보기 아이콘 클릭
 
-### Code Snippets
+### 자동 완성
 
-Quick snippets for common patterns:
+컴포넌트와 속성에 대한 자동 완성을 제공합니다:
 
-| Prefix | Description |
-|--------|-------------|
-| `page` | Basic page structure |
-| `card` | Card component |
-| `form` | Form with inputs |
-| `navbar` | Navigation bar |
-| `table` | Table with headers |
-| `dashboard` | Dashboard layout |
-| `login` | Login form |
+- 컴포넌트 이름 (`card`, `button`, `input` 등)
+- 수정자 (`primary`, `secondary`, `danger` 등)
+- 속성 키 (`width`, `gap`, `justify` 등)
 
-Type the prefix and press Tab to expand.
+### 호버 정보
 
-### Formatting
+컴포넌트 위에 마우스를 올리면 문서 정보가 표시됩니다:
 
-Format your Wireweave code:
+- 컴포넌트 설명
+- 사용 가능한 속성
+- 예제 코드
 
-- `Cmd+Shift+F` (Mac) / `Ctrl+Shift+F` (Windows)
-- Or right-click and select "Format Document"
+### 오류 진단
 
-## Configuration
+문법 오류가 있으면 실시간으로 표시됩니다:
 
-### Settings
+- 빨간 밑줄로 오류 위치 표시
+- Problems 패널에서 전체 오류 목록 확인
+- 오류 메시지에서 수정 방법 안내
 
-Open VS Code settings and search for "Wireweave":
+## 설정
+
+확장 설정을 커스터마이즈할 수 있습니다:
 
 ```json
 {
-  "wireweave.preview.theme": "light",
-  "wireweave.preview.autoRefresh": true,
-  "wireweave.preview.refreshDelay": 300,
-  "wireweave.format.indentSize": 2
+  "wireweave.theme": "light",
+  "wireweave.autoPreview": true,
+  "wireweave.previewWidth": 800
 }
 ```
 
-### Preview Options
+### 사용 가능한 설정
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `theme` | `"light"` | Preview theme (light/dark) |
-| `autoRefresh` | `true` | Auto-update preview |
-| `refreshDelay` | `300` | Delay before refresh (ms) |
+| 설정 | 기본값 | 설명 |
+|------|--------|------|
+| `wireweave.theme` | `"light"` | 미리보기 테마 ("light" 또는 "dark") |
+| `wireweave.autoPreview` | `true` | 파일 열 때 자동으로 미리보기 열기 |
+| `wireweave.previewWidth` | `800` | 미리보기 패널 너비 |
 
-## Keyboard Shortcuts
+## 키보드 단축키
 
-| Shortcut | Action |
-|----------|--------|
-| `Cmd+Shift+V` | Toggle Preview |
-| `Cmd+K V` | Open Preview to Side |
-| `Cmd+Shift+F` | Format Document |
+| 단축키 | 동작 |
+|--------|------|
+| `Cmd+K V` / `Ctrl+K V` | 미리보기 열기 |
+| `Cmd+Shift+V` / `Ctrl+Shift+V` | 미리보기 토글 |
 
-## File Association
+## 마크다운 통합
 
-The extension automatically associates with `.wire` files. To manually set file association:
+마크다운 파일에서 wireframe 코드 블록을 사용할 수 있습니다:
 
-```json
-{
-  "files.associations": {
-    "*.wire": "wireweave"
+````markdown
+```wireframe
+page "Example" {
+  card {
+    button "Click" primary
   }
 }
 ```
+````
 
-## Commands
+## 문제 해결
 
-Available commands (Cmd+Shift+P):
+### 미리보기가 표시되지 않음
 
-- **Wireweave: Open Preview** - Open live preview
-- **Wireweave: Export to HTML** - Export current file as HTML
-- **Wireweave: Export to SVG** - Export current file as SVG
-- **Wireweave: Validate** - Check syntax errors
+1. 확장이 활성화되어 있는지 확인
+2. 파일 확장자가 `.wire` 또는 `.wireframe`인지 확인
+3. VS Code 재시작
 
-## Troubleshooting
+### 자동 완성이 작동하지 않음
 
-### Preview Not Loading
+1. 언어 모드가 "Wireframe"인지 확인 (상태 표시줄에서 확인)
+2. 확장이 최신 버전인지 확인
 
-1. Check for syntax errors in your code
-2. Try reloading VS Code (Cmd+Shift+P → "Reload Window")
-3. Check the Output panel for errors (View → Output → Wireweave)
+## 다음 단계
 
-### Syntax Highlighting Not Working
-
-1. Verify the file has `.wire` extension
-2. Check file association in settings
-3. Try reinstalling the extension
-
-## Next Steps
-
-- [Markdown Plugin](/guide/markdown-plugin) - Embed in docs
-- [MCP Server](/guide/mcp-server) - AI integration
+- [마크다운 플러그인](/ko/guide/markdown-plugin) - 문서에 와이어프레임 삽입
+- [문법 레퍼런스](/ko/reference/grammar) - 전체 DSL 문법

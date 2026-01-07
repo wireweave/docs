@@ -140,7 +140,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/wireweave' },
+      { icon: 'github', link: 'https://github.com/wireweave/core' },
     ],
 
     footer: {

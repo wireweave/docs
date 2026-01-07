@@ -1,70 +1,70 @@
-# Pages
+# 페이지
 
-Every Wireweave wireframe starts with a `page` component - the root container for all content.
+모든 Wireweave 와이어프레임은 `page` 컴포넌트로 시작합니다. 이것은 모든 콘텐츠의 루트 컨테이너입니다.
 
-## Basic Page
+## 기본 페이지
 
 ```wireframe
 page {
-  // content goes here
+  // 콘텐츠가 들어갑니다
 }
 ```
 
-## Page Title
+## 페이지 제목
 
-Give your page a title:
+페이지에 제목을 지정합니다:
 
 ```wireframe
 page "Login" {
-  // content
+  // 콘텐츠
 }
 ```
 
-The title appears in the wireframe header and can be used for documentation.
+제목은 와이어프레임 헤더에 표시되며 문서화에 사용할 수 있습니다.
 
-## Page Themes
+## 페이지 테마
 
-Set the color theme for the entire page:
+전체 페이지의 색상 테마를 설정합니다:
 
 ```wireframe
 page "Dashboard" theme:light {
-  // light theme (default)
+  // 라이트 테마 (기본값)
 }
 
 page "Dashboard" theme:dark {
-  // dark theme
+  // 다크 테마
 }
 ```
 
-## Page Layout
+## 페이지 레이아웃
 
-### Full Width
+### 전체 너비
 
 ```wireframe
 page fullWidth {
-  // content spans full width
+  // 콘텐츠가 전체 너비를 차지합니다
 }
 ```
 
-### Centered Content
+### 중앙 정렬
 
 ```wireframe
 page center {
-  // content is centered
+  // 콘텐츠가 중앙에 정렬됩니다
 }
 ```
 
-### Max Width
+### 최대 너비
 
 ```wireframe
 page maxWidth:1200 {
-  // content limited to 1200px
+  // 콘텐츠가 1200px로 제한됩니다
 }
 ```
 
-## Common Page Structures
+## 일반적인 페이지 구조
 
-### Landing Page
+### 랜딩 페이지
 
 ```wireframe
 page "Home" {
@@ -94,7 +94,7 @@ page "Home" {
 }
 ```
 
-### Dashboard
+### 대시보드
 
 ```wireframe
 page "Dashboard" {
@@ -132,7 +132,7 @@ page "Dashboard" {
 }
 ```
 
-### Auth Pages
+### 인증 페이지
 
 ```wireframe
 page "Login" center {
@@ -157,7 +157,7 @@ page "Login" center {
 }
 ```
 
-### Settings Page
+### 설정 페이지
 
 ```wireframe
 page "Settings" {
@@ -208,9 +208,9 @@ page "Settings" {
 }
 ```
 
-## Multiple Pages
+## 다중 페이지
 
-For multi-page wireframes, create separate files:
+다중 페이지 와이어프레임의 경우 별도의 파일을 만듭니다:
 
 ```
 wireframes/
@@ -220,7 +220,7 @@ wireframes/
   profile.wire
 ```
 
-Or use sections to show flow:
+또는 섹션을 사용하여 흐름을 표시합니다:
 
 ```wireframe
 page "User Flow" {
@@ -238,7 +238,7 @@ page "User Flow" {
 }
 ```
 
-## Next Steps
+## 다음 단계
 
-- [Components](/guide/components) - Available UI components
-- [Layouts](/guide/layouts) - Layout options
+- [컴포넌트](/ko/guide/components) - 사용 가능한 UI 컴포넌트
+- [레이아웃](/ko/guide/layouts) - 레이아웃 옵션

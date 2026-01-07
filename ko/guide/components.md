@@ -1,14 +1,14 @@
-# Components
+# 컴포넌트
 
-Wireweave provides semantic UI components for building wireframes quickly.
+Wireweave는 와이어프레임을 빠르게 구축할 수 있는 시맨틱 UI 컴포넌트를 제공합니다.
 
-## Component Categories
+## 컴포넌트 카테고리
 
-Wireweave components are organized into 10 categories:
+Wireweave 컴포넌트는 10가지 카테고리로 구성됩니다:
 
-| Category | Purpose | Components |
-|----------|---------|------------|
-| **Layout** | 페이지 구조 정의 | page, header, main, footer, sidebar, section |
+| 카테고리 | 목적 | 컴포넌트 |
+|----------|------|----------|
+| **Layout** | 페이지 구조 | page, header, main, footer, sidebar, section |
 | **Grid** | 플렉스 레이아웃 | row, col |
 | **Container** | 콘텐츠 그룹화 | card, modal, drawer, accordion |
 | **Text** | 텍스트 표시 | text, title, link |
@@ -21,7 +21,7 @@ Wireweave components are organized into 10 categories:
 
 ## Layout
 
-페이지의 전체 구조를 정의합니다. 모든 wireframe은 `page`로 시작합니다.
+전체 페이지 구조를 정의합니다. 모든 와이어프레임은 `page`로 시작합니다.
 
 ```wireframe
 page "Dashboard" {
@@ -37,7 +37,7 @@ page "Dashboard" {
 }
 ```
 
-`sidebar`를 추가하면 대시보드 레이아웃을 만들 수 있습니다:
+대시보드 레이아웃을 만들려면 `sidebar`를 추가합니다:
 
 ```wireframe
 page {
@@ -51,7 +51,7 @@ page {
 
 ## Grid
 
-`row`와 `col`로 유연한 레이아웃을 구성합니다.
+`row`와 `col`로 유연한 레이아웃을 구축합니다.
 
 ```wireframe
 row gap=4 justify=between {
@@ -64,7 +64,7 @@ row gap=4 justify=between {
 }
 ```
 
-버튼 그룹처럼 간단한 가로 배치에도 사용합니다:
+버튼 그룹과 같은 단순한 가로 배치에도 유용합니다:
 
 ```wireframe
 row gap=2 justify=end {
@@ -75,7 +75,7 @@ row gap=2 justify=end {
 
 ## Container
 
-콘텐츠를 시각적으로 그룹화할 때 사용합니다.
+콘텐츠를 시각적으로 그룹화합니다.
 
 **card** - 가장 많이 사용되는 컨테이너:
 ```wireframe
@@ -149,7 +149,7 @@ placeholder "Product Image" w=300 h=200
 
 ## Data
 
-데이터를 구조화하여 표시합니다.
+구조화된 데이터를 표시합니다.
 
 ```wireframe
 table striped hover {
@@ -157,13 +157,13 @@ table striped hover {
 }
 
 list ordered {
-  // 순서 있는 목록
+  // 순서가 있는 목록
 }
 ```
 
 ## Feedback
 
-사용자에게 상태를 알려줍니다.
+사용자에게 상태를 전달합니다.
 
 ```wireframe
 alert "Changes saved successfully" variant=success
@@ -183,17 +183,17 @@ tooltip "Click to save" {
 }
 
 dropdown {
-  // 드롭다운 메뉴 아이템
+  // 드롭다운 메뉴 항목
 }
 ```
 
 ## Navigation
 
-페이지 간 이동을 위한 컴포넌트입니다.
+페이지 네비게이션을 위한 컴포넌트입니다.
 
 ```wireframe
 nav {
-  // 수평 네비게이션
+  // 가로 네비게이션
 }
 
 tabs active=0 {
@@ -205,9 +205,9 @@ breadcrumb {
 }
 ```
 
-## Common Patterns
+## 일반적인 패턴
 
-### Login Form
+### 로그인 폼
 
 ```wireframe
 page "Login" centered {
@@ -226,7 +226,7 @@ page "Login" centered {
 }
 ```
 
-### Dashboard
+### 대시보드
 
 ```wireframe
 page "Dashboard" {
@@ -251,8 +251,8 @@ page "Dashboard" {
 }
 ```
 
-## Next Steps
+## 다음 단계
 
-- [Layouts Guide](/guide/layouts) - 레이아웃 상세
-- [Styling Guide](/guide/styling) - 스타일링 옵션
-- [Components Reference](/reference/components) - 모든 속성 상세
+- [레이아웃 가이드](/ko/guide/layouts) - 레이아웃 상세
+- [스타일링 가이드](/ko/guide/styling) - 스타일링 옵션
+- [컴포넌트 레퍼런스](/ko/reference/components) - 모든 속성 상세

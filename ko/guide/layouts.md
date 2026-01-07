@@ -1,10 +1,10 @@
-# Layouts
+# 레이아웃
 
-Wireweave provides flexible layout options for organizing your wireframe content.
+Wireweave는 와이어프레임 콘텐츠를 구성하기 위한 유연한 레이아웃 옵션을 제공합니다.
 
-## Page Layouts
+## 페이지 레이아웃
 
-### Basic Layout
+### 기본 레이아웃
 
 ```wireframe
 page "Basic" {
@@ -14,7 +14,7 @@ page "Basic" {
 }
 ```
 
-### Sidebar Layout
+### 사이드바 레이아웃
 
 ```wireframe
 page "Dashboard" {
@@ -27,7 +27,7 @@ page "Dashboard" {
 }
 ```
 
-### Two Column Layout
+### 2단 레이아웃
 
 ```wireframe
 page "Blog" {
@@ -40,11 +40,11 @@ page "Blog" {
 }
 ```
 
-## Layout Components
+## 레이아웃 컴포넌트
 
 ### Row
 
-Horizontal arrangement:
+가로 방향 배치:
 
 ```wireframe
 row {
@@ -56,22 +56,22 @@ row {
 
 ### Column
 
-Vertical sections with width:
+너비가 있는 세로 섹션:
 
 ```wireframe
 row {
   column width:6 {
-    // half width
+    // 반 너비
   }
   column width:6 {
-    // half width
+    // 반 너비
   }
 }
 ```
 
 ### Grid
 
-Grid-based layout:
+그리드 기반 레이아웃:
 
 ```wireframe
 grid columns:3 gap:16 {
@@ -86,7 +86,7 @@ grid columns:3 gap:16 {
 
 ### Stack
 
-Vertical stacking:
+세로 방향 쌓기:
 
 ```wireframe
 stack gap:8 {
@@ -96,107 +96,107 @@ stack gap:8 {
 }
 ```
 
-## Alignment
+## 정렬
 
-### Horizontal Alignment
+### 가로 정렬
 
 ```wireframe
 card left {
-  // left aligned (default)
+  // 왼쪽 정렬 (기본값)
 }
 
 card center {
-  // horizontally centered
+  // 가로 중앙 정렬
 }
 
 card right {
-  // right aligned
+  // 오른쪽 정렬
 }
 ```
 
-### Vertical Alignment
+### 세로 정렬
 
 ```wireframe
 row align:top {
-  // top aligned
+  // 상단 정렬
 }
 
 row align:center {
-  // vertically centered
+  // 세로 중앙 정렬
 }
 
 row align:bottom {
-  // bottom aligned
+  // 하단 정렬
 }
 ```
 
-### Distribution
+### 배분
 
 ```wireframe
 row justify:between {
-  // space between items
+  // 아이템 사이에 공간
 }
 
 row justify:around {
-  // space around items
+  // 아이템 주위에 공간
 }
 
 row justify:evenly {
-  // equal space between items
+  // 아이템 사이에 균등한 공간
 }
 ```
 
-## Spacing
+## 간격
 
-### Padding
+### 패딩
 
 ```wireframe
 card padding:16 {
-  // 16px padding
+  // 16px 패딩
 }
 
 card padding:24 {
-  // 24px padding
+  // 24px 패딩
 }
 ```
 
-### Gap
+### 갭
 
 ```wireframe
 row gap:8 {
-  // 8px gap between items
+  // 아이템 사이 8px 갭
 }
 
 stack gap:16 {
-  // 16px gap between items
+  // 아이템 사이 16px 갭
 }
 ```
 
-### Margin
+### 마진
 
 ```wireframe
 section margin:32 {
-  // 32px margin
+  // 32px 마진
 }
 ```
 
-## Responsive Hints
+## 반응형 힌트
 
-Wireweave supports responsive hints:
+Wireweave는 반응형 힌트를 지원합니다:
 
 ```wireframe
 grid columns:3 columns-sm:1 {
-  // 3 columns on desktop, 1 on mobile
+  // 데스크톱에서 3열, 모바일에서 1열
 }
 
 row wrap {
-  // items wrap on smaller screens
+  // 작은 화면에서 아이템이 줄바꿈됩니다
 }
 ```
 
-## Common Patterns
+## 일반적인 패턴
 
-### Card Grid
+### 카드 그리드
 
 ```wireframe
 grid columns:3 gap:24 {
@@ -206,11 +206,11 @@ grid columns:3 gap:24 {
     text "$99.00"
     button "Add to Cart"
   }
-  // more cards...
+  // 더 많은 카드...
 }
 ```
 
-### Form Layout
+### 폼 레이아웃
 
 ```wireframe
 card {
@@ -227,7 +227,7 @@ card {
 }
 ```
 
-### Dashboard Layout
+### 대시보드 레이아웃
 
 ```wireframe
 page "Dashboard" {
@@ -251,7 +251,7 @@ page "Dashboard" {
 }
 ```
 
-## Next Steps
+## 다음 단계
 
-- [Styling Guide](/guide/styling) - Customize colors and themes
-- [Components Reference](/reference/components) - All components
+- [스타일링 가이드](/ko/guide/styling) - 색상과 테마 커스터마이즈
+- [컴포넌트 레퍼런스](/ko/reference/components) - 모든 컴포넌트

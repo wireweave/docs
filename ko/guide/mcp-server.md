@@ -1,23 +1,20 @@
-# MCP Server
+# MCP 서버
 
-The Wireweave MCP Server enables AI assistants to generate wireframes through the Model Context Protocol.
+Wireweave MCP 서버를 사용하면 Claude 및 기타 AI 어시스턴트와 Wireweave를 통합할 수 있습니다.
 
-## What is MCP?
+## MCP란?
 
-The [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) is a standard for connecting AI assistants to external tools and data sources. Wireweave provides an MCP server that exposes wireframe generation capabilities.
+MCP(Model Context Protocol)는 AI 모델이 외부 도구 및 서비스와 상호작용할 수 있게 해주는 프로토콜입니다. Wireweave MCP 서버는 AI 어시스턴트가 대화를 통해 와이어프레임을 생성할 수 있게 합니다.
 
-## Installation
+## 설치
 
-### Get an API Key
+### 1. API 키 발급
 
-1. Visit the [Wireweave Dashboard](https://dashboard.wireweave.org)
-2. Sign up or log in
-3. Create a new API key
-4. Copy the key for configuration
+[Dashboard](https://dashboard.wireweave.org)에서 API 키를 발급받습니다.
 
-### Configure Claude Desktop
+### 2. Claude Desktop 설정
 
-Add the MCP server to your Claude Desktop configuration:
+Claude Desktop 설정 파일에 MCP 서버를 추가합니다:
 
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
@@ -30,133 +27,105 @@ Add the MCP server to your Claude Desktop configuration:
       "command": "npx",
       "args": ["@wireweave/mcp-server"],
       "env": {
-        "WIREWEAVE_API_KEY": "your-api-key-here"
+        "WIREWEAVE_API_KEY": "your-api-key"
       }
     }
   }
 }
 ```
 
-### Restart Claude Desktop
+### 3. Claude Desktop 재시작
 
-After saving the configuration, restart Claude Desktop to load the MCP server.
+설정 변경 후 Claude Desktop을 재시작합니다.
 
-## Available Tools
+## 사용 방법
 
-The MCP server provides these tools to AI assistants:
+Claude에게 와이어프레임 생성을 요청하면 됩니다:
 
-### wireweave_parse
+- "로그인 페이지 와이어프레임 만들어줘"
+- "대시보드 레이아웃 설계해줘"
+- "이커머스 상품 목록 페이지 보여줘"
 
-Parse DSL source code into an AST (Abstract Syntax Tree).
+## 사용 가능한 도구
 
-**Input:**
-- `source` (string): Wireweave DSL code
+MCP 서버는 다음 도구를 제공합니다:
 
-**Output:**
-- Parsed AST in JSON format
+### wireweave_render
+
+와이어프레임을 HTML 또는 SVG로 렌더링합니다.
+
+```
+입력:
+- source: Wireweave DSL 소스 코드
+- format: "html" 또는 "svg"
+- theme: "light" 또는 "dark"
+
+출력:
+- 렌더링된 HTML/SVG 코드
+```
 
 ### wireweave_validate
 
-Validate DSL syntax without generating output.
+Wireweave DSL 문법을 검증합니다.
 
-**Input:**
-- `source` (string): Wireweave DSL code
+```
+입력:
+- source: Wireweave DSL 소스 코드
 
-**Output:**
-- Validation result with any errors
-
-### wireweave_render_html
-
-Render DSL to HTML and CSS.
-
-**Input:**
-- `source` (string): Wireweave DSL code
-- `theme` (string, optional): "light" or "dark"
-- `fullDocument` (boolean, optional): Return complete HTML document
-
-**Output:**
-- Generated HTML and CSS
-
-### wireweave_render_svg
-
-Render DSL to SVG format.
-
-**Input:**
-- `source` (string): Wireweave DSL code
-- `width` (number, optional): SVG width in pixels
-- `padding` (number, optional): Padding around content
-- `theme` (string, optional): "light" or "dark"
-
-**Output:**
-- Generated SVG markup
+출력:
+- valid: 유효 여부
+- errors: 오류 목록 (있는 경우)
+```
 
 ### wireweave_grammar
 
-Get DSL grammar documentation.
+DSL 문법 문서를 가져옵니다.
 
-**Input:** None
+```
+출력:
+- 문법 설명
+- 사용 가능한 컴포넌트 목록
+- 수정자 목록
+```
 
-**Output:**
-- Grammar reference and syntax documentation
+## 예제 대화
 
-## Usage Examples
+**사용자**: 간단한 로그인 페이지 와이어프레임 만들어줘
 
-Once configured, you can ask Claude to create wireframes:
+**Claude**: 네, 로그인 페이지 와이어프레임을 만들겠습니다.
 
-> "Create a wireframe for a user profile page with avatar, bio, and recent activity"
-
-> "Generate a login form with email, password, and social login buttons"
-
-> "Make a dashboard wireframe with sidebar navigation and stats cards"
-
-Claude will use the MCP tools to generate and render wireframes.
-
-## Rate Limits
-
-Rate limits depend on your subscription tier:
-
-| Tier | Per Minute | Per Day | Monthly |
-|------|------------|---------|---------|
-| Free | 10 | 100 | 1,000 |
-| Basic | 30 | 500 | 10,000 |
-| Pro | 60 | 2,000 | 50,000 |
-| Enterprise | 120 | 10,000 | Unlimited |
-
-## Environment Variables
-
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `WIREWEAVE_API_KEY` | Yes | Your API key from Dashboard |
-| `WIREWEAVE_API_URL` | No | Custom API URL (default: https://api.wireweave.org) |
-
-## Troubleshooting
-
-### "API key not set" Error
-
-Ensure your API key is correctly set in the environment:
-
-```json
-{
-  "env": {
-    "WIREWEAVE_API_KEY": "ww_your_key_here"
+```wireframe
+page "Login" centered {
+  card w=400 p=6 {
+    title "Sign In" level=2 align=center
+    input "Email" type=email
+    input "Password" type=password
+    checkbox "Remember me"
+    button "Sign In" primary
+    divider my=4
+    text "Don't have an account?" align=center
+    link "Sign Up" align=center
   }
 }
 ```
 
-### Server Not Loading
+[와이어프레임 이미지 렌더링]
 
-1. Check Claude Desktop logs for errors
-2. Verify the config file is valid JSON
-3. Restart Claude Desktop after changes
+## 문제 해결
 
-### Rate Limit Exceeded
+### 서버가 연결되지 않음
 
-If you hit rate limits:
-- Wait for the limit to reset
-- Consider upgrading your plan
-- Optimize requests to reduce usage
+1. API 키가 올바른지 확인
+2. Claude Desktop 재시작
+3. 설정 파일 경로 확인
 
-## Next Steps
+### 렌더링 실패
 
-- [VS Code Extension](/guide/vscode-extension) - Local development
-- [API Reference](/reference/api) - Direct API access
+1. DSL 문법 확인
+2. API 사용량 제한 확인
+3. 네트워크 연결 상태 확인
+
+## 다음 단계
+
+- [VS Code 확장](/ko/guide/vscode-extension) - 에디터 통합
+- [API 레퍼런스](/ko/reference/api) - API 상세 문서

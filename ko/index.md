@@ -3,34 +3,34 @@ layout: home
 
 hero:
   name: Wireweave
-  text: AI-Powered Wireframe DSL
-  tagline: Generate beautiful wireframes from simple, readable code
+  text: AI 기반 와이어프레임 DSL
+  tagline: 간단하고 읽기 쉬운 코드로 아름다운 와이어프레임을 생성하세요
   image:
     src: /logo.svg
     alt: Wireweave
   actions:
     - theme: brand
-      text: Get Started
-      link: /guide/getting-started
+      text: 시작하기
+      link: /ko/guide/getting-started
     - theme: alt
-      text: View on GitHub
-      link: https://github.com/wireweave
+      text: GitHub에서 보기
+      link: https://github.com/wireweave/core
 
 features:
   - icon:
       src: /icons/lightning.svg
-    title: Lightning Fast
-    details: Generate wireframes in seconds. Write simple code and get professional UI mockups instantly.
+    title: 빠른 속도
+    details: 몇 초 만에 와이어프레임을 생성합니다. 간단한 코드를 작성하면 즉시 전문적인 UI 목업을 얻을 수 있습니다.
   - icon:
       src: /icons/ai.svg
-    title: AI-First Design
-    details: Built for AI assistants. Claude, GPT, and others can generate wireframes naturally through conversation.
+    title: AI 우선 설계
+    details: AI 어시스턴트를 위해 설계되었습니다. Claude, GPT 등이 대화를 통해 자연스럽게 와이어프레임을 생성할 수 있습니다.
   - icon:
       src: /icons/components.svg
-    title: Rich Components
-    details: Cards, forms, tables, navigation - a complete set of semantic UI components ready to use.
+    title: 풍부한 컴포넌트
+    details: 카드, 폼, 테이블, 네비게이션 등 바로 사용할 수 있는 완전한 시맨틱 UI 컴포넌트 세트를 제공합니다.
   - icon:
       src: /icons/export.svg
-    title: Multiple Outputs
-    details: Export to HTML, SVG, or use the AST for custom integrations in your workflow.
+    title: 다양한 출력 형식
+    details: HTML, SVG로 내보내거나 워크플로우에서 커스텀 통합을 위해 AST를 사용할 수 있습니다.
 ---
