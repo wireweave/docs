@@ -1,4 +1,16 @@
 import { defineConfig } from 'vitepress';
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+import type { LanguageRegistration } from 'shiki';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Load custom wireframe language definition for Shiki
+const wireframeLang: LanguageRegistration = JSON.parse(
+  readFileSync(resolve(__dirname, 'wireframe.tmLanguage.json'), 'utf-8')
+);
 
 export default defineConfig({
   title: 'Wireweave',
@@ -8,14 +20,84 @@ export default defineConfig({
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
   ],
 
+  markdown: {
+    languages: [wireframeLang],
+  },
+
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en',
+    },
+    ko: {
+      label: '한국어',
+      lang: 'ko',
+      link: '/ko/',
+      themeConfig: {
+        nav: [
+          { text: '가이드', link: '/ko/guide/getting-started' },
+          { text: '레퍼런스', link: '/ko/reference/grammar' },
+          { text: 'Playground', link: 'https://playground.wireweave.org' },
+          { text: 'Dashboard', link: 'https://dashboard.wireweave.org' },
+        ],
+        sidebar: {
+          '/ko/guide/': [
+            {
+              text: '소개',
+              items: [
+                { text: 'Wireweave란?', link: '/ko/guide/what-is-wireweave' },
+                { text: '시작하기', link: '/ko/guide/getting-started' },
+              ],
+            },
+            {
+              text: '핵심 개념',
+              items: [
+                { text: '페이지', link: '/ko/guide/pages' },
+                { text: '컴포넌트', link: '/ko/guide/components' },
+                { text: '레이아웃', link: '/ko/guide/layouts' },
+                { text: '스타일링', link: '/ko/guide/styling' },
+              ],
+            },
+            {
+              text: '연동',
+              items: [
+                { text: 'MCP 서버', link: '/ko/guide/mcp-server' },
+                { text: 'VS Code 확장', link: '/ko/guide/vscode-extension' },
+                { text: '마크다운 플러그인', link: '/ko/guide/markdown-plugin' },
+              ],
+            },
+          ],
+          '/ko/reference/': [
+            {
+              text: '레퍼런스',
+              items: [
+                { text: '문법', link: '/ko/reference/grammar' },
+                { text: '컴포넌트', link: '/ko/reference/components' },
+                { text: 'API', link: '/ko/reference/api' },
+              ],
+            },
+          ],
+        },
+        outline: {
+          level: [2, 3],
+          label: '목차',
+        },
+      },
+    },
+  },
+
   themeConfig: {
     logo: '/logo.svg',
+    outline: {
+      level: [2, 3],
+      label: 'On this page',
+    },
 
     nav: [
       { text: 'Guide', link: '/guide/getting-started' },
       { text: 'Reference', link: '/reference/grammar' },
-      { text: 'Playground', link: 'https://playground.wireweave.dev' },
-      { text: 'Dashboard', link: 'https://dashboard.wireweave.dev' },
+      { text: 'Playground', link: 'https://playground.wireweave.org' },
+      { text: 'Dashboard', link: 'https://dashboard.wireweave.org' },
     ],
 
     sidebar: {

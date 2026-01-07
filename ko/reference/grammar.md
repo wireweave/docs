@@ -69,18 +69,18 @@ button "Click" primary
 
 ## Components Reference
 
-### Layout
+### Layout (레이아웃)
 
-Components that define page structure.
+페이지 구조를 정의하는 컴포넌트입니다.
 
 | Component | Description | Attributes |
 |-----------|-------------|------------|
-| `page` | Page root container | title, viewport, device, centered, p, gap |
-| `header` | Page header area | p, border, gap, justify, align |
-| `main` | Main content area | p, gap |
-| `footer` | Page footer area | p, border, gap |
-| `sidebar` | Sidebar area | position, w, p, gap |
-| `section` | Section area | title, expanded, p, gap |
+| `page` | 페이지 루트 컨테이너 | title, viewport, device, centered, p, gap |
+| `header` | 페이지 헤더 영역 | p, border, gap, justify, align |
+| `main` | 메인 콘텐츠 영역 | p, gap |
+| `footer` | 페이지 푸터 영역 | p, border, gap |
+| `sidebar` | 사이드바 영역 | position, w, p, gap |
+| `section` | 섹션 영역 | title, expanded, p, gap |
 
 ```wireframe
 page "Dashboard" {
@@ -90,14 +90,14 @@ page "Dashboard" {
 }
 ```
 
-### Grid
+### Grid (그리드)
 
-Components for flex layout.
+플렉스 레이아웃을 위한 컴포넌트입니다.
 
 | Component | Description | Attributes |
 |-----------|-------------|------------|
-| `row` | Horizontal flex container | gap, justify, align, wrap, p, m |
-| `col` | Vertical container/grid column | span, sm, md, lg, xl, order, gap, p, w |
+| `row` | 가로 방향 플렉스 컨테이너 | gap, justify, align, wrap, p, m |
+| `col` | 세로 방향 컨테이너/그리드 컬럼 | span, sm, md, lg, xl, order, gap, p, w |
 
 ```wireframe
 row gap=4 justify=between {
@@ -106,16 +106,16 @@ row gap=4 justify=between {
 }
 ```
 
-### Container
+### Container (컨테이너)
 
-Components for grouping content.
+콘텐츠를 그룹화하는 컴포넌트입니다.
 
 | Component | Description | Attributes |
 |-----------|-------------|------------|
-| `card` | Card component | title, p, shadow, border, gap |
-| `modal` | Modal dialog | title, w, h, p |
-| `drawer` | Drawer panel | title, position, p |
-| `accordion` | Accordion panel | title, p |
+| `card` | 카드 컴포넌트 | title, p, shadow, border, gap |
+| `modal` | 모달 다이얼로그 | title, w, h, p |
+| `drawer` | 드로어 패널 | title, position, p |
+| `accordion` | 아코디언 패널 | title, p |
 
 ```wireframe
 card title="Settings" shadow=md {
@@ -128,15 +128,15 @@ modal "Confirm" {
 }
 ```
 
-### Text
+### Text (텍스트)
 
-Components for displaying text.
+텍스트 표시를 위한 컴포넌트입니다.
 
 | Component | Description | Attributes |
 |-----------|-------------|------------|
-| `text` | Regular text | size, weight, align, muted, m |
-| `title` | Heading (h1~h6) | level, size, align, m |
-| `link` | Hyperlink | href, external |
+| `text` | 일반 텍스트 | size, weight, align, muted, m |
+| `title` | 제목 (h1~h6) | level, size, align, m |
+| `link` | 하이퍼링크 | href, external |
 
 ```wireframe
 title "Welcome" level=1
@@ -144,20 +144,20 @@ text "Description" muted
 link "Learn more" href="/docs"
 ```
 
-### Input
+### Input (입력/버튼)
 
-Components for user input.
+사용자 입력을 받는 컴포넌트입니다.
 
 | Component | Description | Attributes |
 |-----------|-------------|------------|
-| `input` | Input field | label, type, placeholder, value, disabled, required, icon |
-| `textarea` | Multi-line input | label, placeholder, value, rows, disabled |
-| `select` | Dropdown select | label, placeholder, value, disabled |
-| `checkbox` | Checkbox | label, checked, disabled |
-| `radio` | Radio button | label, name, checked, disabled |
-| `switch` | Toggle switch | label, checked, disabled |
-| `slider` | Slider | label, min, max, value, step, disabled |
-| `button` | Button | primary, secondary, outline, ghost, danger, size, icon, disabled, loading |
+| `input` | 입력 필드 | label, type, placeholder, value, disabled, required, icon |
+| `textarea` | 여러 줄 입력 | label, placeholder, value, rows, disabled |
+| `select` | 드롭다운 선택 | label, placeholder, value, disabled |
+| `checkbox` | 체크박스 | label, checked, disabled |
+| `radio` | 라디오 버튼 | label, name, checked, disabled |
+| `switch` | 토글 스위치 | label, checked, disabled |
+| `slider` | 슬라이더 | label, min, max, value, step, disabled |
+| `button` | 버튼 | primary, secondary, outline, ghost, danger, size, icon, disabled, loading |
 
 Input types: `text`, `email`, `password`, `number`, `tel`, `url`, `search`, `date`
 
@@ -170,18 +170,18 @@ button "Submit" primary
 button "Cancel" outline
 ```
 
-### Display
+### Display (표시)
 
-Components for displaying visual elements.
+시각적 요소를 표시하는 컴포넌트입니다.
 
 | Component | Description | Attributes |
 |-----------|-------------|------------|
-| `image` | Image | src, alt, w, h |
-| `placeholder` | Placeholder | label, w, h |
-| `avatar` | Avatar | name, src, size |
-| `badge` | Badge | variant, pill, icon, size |
-| `icon` | Icon | name, size, muted |
-| `divider` | Divider | m, my, mx |
+| `image` | 이미지 | src, alt, w, h |
+| `placeholder` | 플레이스홀더 | label, w, h |
+| `avatar` | 아바타 | name, src, size |
+| `badge` | 배지 | variant, pill, icon, size |
+| `icon` | 아이콘 | name, size, muted |
+| `divider` | 구분선 | m, my, mx |
 
 ```wireframe
 image src="/photo.jpg" w=200
@@ -191,14 +191,14 @@ icon "home" size=md
 divider my=4
 ```
 
-### Data
+### Data (데이터)
 
-Components for displaying data.
+데이터 표시를 위한 컴포넌트입니다.
 
 | Component | Description | Attributes |
 |-----------|-------------|------------|
-| `table` | Table | striped, bordered, hover |
-| `list` | List | ordered, none, gap |
+| `table` | 테이블 | striped, bordered, hover |
+| `list` | 리스트 | ordered, none, gap |
 
 ```wireframe
 table striped hover {
@@ -210,16 +210,16 @@ list ordered {
 }
 ```
 
-### Feedback
+### Feedback (피드백)
 
-Components for providing feedback to users.
+사용자에게 피드백을 제공하는 컴포넌트입니다.
 
 | Component | Description | Attributes |
 |-----------|-------------|------------|
-| `alert` | Alert message | variant, dismissible, icon |
-| `toast` | Toast notification | position, variant |
-| `progress` | Progress bar | value, max, label, indeterminate |
-| `spinner` | Loading spinner | label, size |
+| `alert` | 알림 메시지 | variant, dismissible, icon |
+| `toast` | 토스트 알림 | position, variant |
+| `progress` | 프로그레스 바 | value, max, label, indeterminate |
+| `spinner` | 로딩 스피너 | label, size |
 
 Variants: `success`, `warning`, `danger`, `info`
 
@@ -229,15 +229,15 @@ progress value=75 label="Loading..."
 spinner size=lg
 ```
 
-### Overlay
+### Overlay (오버레이)
 
-Overlay UI components.
+오버레이 UI 컴포넌트입니다.
 
 | Component | Description | Attributes |
 |-----------|-------------|------------|
-| `tooltip` | Tooltip | position |
-| `popover` | Popover | title |
-| `dropdown` | Dropdown menu | - |
+| `tooltip` | 툴팁 | position |
+| `popover` | 팝오버 | title |
+| `dropdown` | 드롭다운 메뉴 | - |
 
 ```wireframe
 tooltip "Help text" position=top {
@@ -249,15 +249,15 @@ dropdown {
 }
 ```
 
-### Navigation
+### Navigation (네비게이션)
 
-Navigation components.
+네비게이션 컴포넌트입니다.
 
 | Component | Description | Attributes |
 |-----------|-------------|------------|
-| `nav` | Navigation menu | vertical, gap |
-| `tabs` | Tab component | active |
-| `breadcrumb` | Breadcrumb | - |
+| `nav` | 네비게이션 메뉴 | vertical, gap |
+| `tabs` | 탭 컴포넌트 | active |
+| `breadcrumb` | 브레드크럼 | - |
 
 ```wireframe
 nav vertical {

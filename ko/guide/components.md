@@ -8,36 +8,36 @@ Wireweave components are organized into 10 categories:
 
 | Category | Purpose | Components |
 |----------|---------|------------|
-| **Layout** | Page structure | page, header, main, footer, sidebar, section |
-| **Grid** | Flex layout | row, col |
-| **Container** | Content grouping | card, modal, drawer, accordion |
-| **Text** | Text display | text, title, link |
-| **Input** | User input | input, textarea, select, checkbox, radio, switch, slider, button |
-| **Display** | Visual elements | image, placeholder, avatar, badge, icon, divider |
-| **Data** | Data display | table, list |
-| **Feedback** | Status feedback | alert, toast, progress, spinner |
-| **Overlay** | Overlay UI | tooltip, popover, dropdown |
-| **Navigation** | Navigation | nav, tabs, breadcrumb |
+| **Layout** | 페이지 구조 정의 | page, header, main, footer, sidebar, section |
+| **Grid** | 플렉스 레이아웃 | row, col |
+| **Container** | 콘텐츠 그룹화 | card, modal, drawer, accordion |
+| **Text** | 텍스트 표시 | text, title, link |
+| **Input** | 사용자 입력 | input, textarea, select, checkbox, radio, switch, slider, button |
+| **Display** | 시각적 요소 | image, placeholder, avatar, badge, icon, divider |
+| **Data** | 데이터 표시 | table, list |
+| **Feedback** | 상태 피드백 | alert, toast, progress, spinner |
+| **Overlay** | 오버레이 UI | tooltip, popover, dropdown |
+| **Navigation** | 네비게이션 | nav, tabs, breadcrumb |
 
 ## Layout
 
-Defines the overall page structure. Every wireframe starts with `page`.
+페이지의 전체 구조를 정의합니다. 모든 wireframe은 `page`로 시작합니다.
 
 ```wireframe
 page "Dashboard" {
   header {
-    // logo, navigation
+    // 로고, 네비게이션
   }
   main {
-    // main content
+    // 메인 콘텐츠
   }
   footer {
-    // copyright, links
+    // 저작권, 링크
   }
 }
 ```
 
-Add `sidebar` to create a dashboard layout:
+`sidebar`를 추가하면 대시보드 레이아웃을 만들 수 있습니다:
 
 ```wireframe
 page {
@@ -51,20 +51,20 @@ page {
 
 ## Grid
 
-Build flexible layouts with `row` and `col`.
+`row`와 `col`로 유연한 레이아웃을 구성합니다.
 
 ```wireframe
 row gap=4 justify=between {
   col span=8 {
-    // main area (8/12)
+    // 메인 영역 (8/12)
   }
   col span=4 {
-    // side area (4/12)
+    // 사이드 영역 (4/12)
   }
 }
 ```
 
-Also useful for simple horizontal arrangements like button groups:
+버튼 그룹처럼 간단한 가로 배치에도 사용합니다:
 
 ```wireframe
 row gap=2 justify=end {
@@ -75,9 +75,9 @@ row gap=2 justify=end {
 
 ## Container
 
-Visually group content together.
+콘텐츠를 시각적으로 그룹화할 때 사용합니다.
 
-**card** - The most commonly used container:
+**card** - 가장 많이 사용되는 컨테이너:
 ```wireframe
 card title="User Profile" {
   avatar "John"
@@ -85,7 +85,7 @@ card title="User Profile" {
 }
 ```
 
-**modal** - When user confirmation is needed:
+**modal** - 사용자 확인이 필요할 때:
 ```wireframe
 modal "Delete Item?" {
   text "This action cannot be undone."
@@ -98,7 +98,7 @@ modal "Delete Item?" {
 
 ## Text
 
-Display text content.
+텍스트 콘텐츠를 표시합니다.
 
 ```wireframe
 title "Welcome" level=1
@@ -109,9 +109,9 @@ link "Learn more" href="/docs"
 
 ## Input
 
-Handle forms and user input.
+폼과 사용자 입력을 처리합니다.
 
-**Basic form pattern:**
+**기본 폼 패턴:**
 ```wireframe
 card {
   title "Login" level=2
@@ -122,7 +122,7 @@ card {
 }
 ```
 
-**Various input components:**
+**다양한 입력 컴포넌트:**
 ```wireframe
 select "Country" placeholder="Select..."
 switch "Notifications" checked
@@ -131,7 +131,7 @@ slider "Volume" min=0 max=100 value=50
 
 ## Display
 
-Show visual elements.
+시각적 요소를 표시합니다.
 
 ```wireframe
 row gap=4 align=center {
@@ -149,21 +149,21 @@ placeholder "Product Image" w=300 h=200
 
 ## Data
 
-Display structured data.
+데이터를 구조화하여 표시합니다.
 
 ```wireframe
 table striped hover {
-  // table data
+  // 테이블 데이터
 }
 
 list ordered {
-  // ordered list
+  // 순서 있는 목록
 }
 ```
 
 ## Feedback
 
-Communicate status to users.
+사용자에게 상태를 알려줍니다.
 
 ```wireframe
 alert "Changes saved successfully" variant=success
@@ -175,7 +175,7 @@ spinner label="Loading..."
 
 ## Overlay
 
-Display additional info or menus as overlays.
+추가 정보나 메뉴를 오버레이로 표시합니다.
 
 ```wireframe
 tooltip "Click to save" {
@@ -183,25 +183,25 @@ tooltip "Click to save" {
 }
 
 dropdown {
-  // dropdown menu items
+  // 드롭다운 메뉴 아이템
 }
 ```
 
 ## Navigation
 
-Components for page navigation.
+페이지 간 이동을 위한 컴포넌트입니다.
 
 ```wireframe
 nav {
-  // horizontal navigation
+  // 수평 네비게이션
 }
 
 tabs active=0 {
-  // tab panels
+  // 탭 패널
 }
 
 breadcrumb {
-  // path display
+  // 경로 표시
 }
 ```
 
@@ -253,6 +253,6 @@ page "Dashboard" {
 
 ## Next Steps
 
-- [Layouts Guide](/guide/layouts) - Layout details
-- [Styling Guide](/guide/styling) - Styling options
-- [Components Reference](/reference/components) - All attributes in detail
+- [Layouts Guide](/guide/layouts) - 레이아웃 상세
+- [Styling Guide](/guide/styling) - 스타일링 옵션
+- [Components Reference](/reference/components) - 모든 속성 상세
